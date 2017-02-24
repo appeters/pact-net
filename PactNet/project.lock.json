@@ -71,7 +71,7 @@
           "lib/net40/Nancy.Hosting.Self.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.3": {
+      "Newtonsoft.Json/7.0.1": {
         "type": "package",
         "compile": {
           "lib/net40/Newtonsoft.Json.dll": {}
@@ -159,7 +159,7 @@
           "lib/net40/Nancy.Hosting.Self.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.3": {
+      "Newtonsoft.Json/7.0.1": {
         "type": "package",
         "compile": {
           "lib/net40/Newtonsoft.Json.dll": {}
@@ -433,12 +433,12 @@
         "lib/net40/Nancy.Hosting.Self.xml"
       ]
     },
-    "Newtonsoft.Json/6.0.3": {
-      "sha512": "kN7Xp8vjnSEiLsyo5ZiKrRFgBU4P8CvcdxGSUBQ3W2OLqDK5rIABHkgN9Yjzh6kZ7BD58Ge19fz5GvfCnwmyGA==",
+    "Newtonsoft.Json/7.0.1": {
+      "sha512": "q3V4KLetMLnt1gpAVWgtXnHjKs0UG/RalBc29u2ZKxd5t5Ze4JBL5WiiYIklJyK/5CRiIiNwigVQUo0FgbsuWA==",
       "type": "package",
-      "path": "Newtonsoft.Json/6.0.3",
+      "path": "Newtonsoft.Json/7.0.1",
       "files": [
-        "Newtonsoft.Json.6.0.3.nupkg.sha512",
+        "Newtonsoft.Json.7.0.1.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -448,12 +448,10 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
-        "lib/netcore45/Newtonsoft.Json.dll",
-        "lib/netcore45/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl4+wp7+win8/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl4+wp7+win8/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
         "tools/install.ps1"
       ]
     },
@@ -478,7 +476,7 @@
       "Microsoft.Net.Http >= 2.2.28",
       "Nancy >= 0.23.1",
       "Nancy.Hosting.Self >= 0.23.1",
-      "Newtonsoft.Json >= 6.0.3",
+      "Newtonsoft.Json >= 7.0.1",
       "System.IO.Abstractions >= 1.4.0.86"
     ]
   },
