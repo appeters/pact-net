@@ -1,0 +1,23 @@
+﻿{
+  "version": "1.0.0-*",
+
+  "frameworks": {
+    "net40": {
+	"dependencies": {
+  "LibLog" : "4.2.2",
+  "Microsoft.Bcl" : "1.1.9",
+  "Microsoft.Bcl.Build" : "1.0.14",
+  "Microsoft.Net.Compilers" : "1.3.2",
+  "Microsoft.Net.Http" : "2.2.28",
+  "Nancy" : "0.23.1",
+  "Nancy.Hosting.Self" : "0.23.1",
+  "Newtonsoft.Json" : "6.0.3",
+  "System.IO.Abstractions" : "1.4.0.86"
+  }
+    }
+	
+  },
+  "runtimes": {
+    "win": { }
+  }
+}
