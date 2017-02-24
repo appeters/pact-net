@@ -1,4 +1,6 @@
 {
+  "copyright": "Copyright ©  2014",
+  "title": "PactNet.Tests",
   "version": "1.0.0-*",
   "frameworks": {
     "net451": {

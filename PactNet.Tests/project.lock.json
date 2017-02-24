@@ -433,7 +433,7 @@
       },
       "PactNet/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.0",
+        "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "LibLog": "4.2.2",
           "Microsoft.Bcl": "1.1.9",
@@ -446,10 +446,10 @@
           "System.IO.Abstractions": "1.4.0.86"
         },
         "compile": {
-          "net40/PactNet.dll": {}
+          "net451/PactNet.dll": {}
         },
         "runtime": {
-          "net40/PactNet.dll": {}
+          "net451/PactNet.dll": {}
         }
       }
     },
@@ -849,7 +849,7 @@
       },
       "PactNet/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.0",
+        "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "LibLog": "4.2.2",
           "Microsoft.Bcl": "1.1.9",
@@ -862,10 +862,10 @@
           "System.IO.Abstractions": "1.4.0.86"
         },
         "compile": {
-          "net40/PactNet.dll": {}
+          "net451/PactNet.dll": {}
         },
         "runtime": {
-          "net40/PactNet.dll": {}
+          "net451/PactNet.dll": {}
         }
       }
     }

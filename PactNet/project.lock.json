@@ -2,7 +2,7 @@
   "locked": false,
   "version": 2,
   "targets": {
-    ".NETFramework,Version=v4.0": {
+    ".NETFramework,Version=v4.5.1": {
       "LibLog/4.2.2": {
         "type": "package",
         "frameworkAssemblies": [
@@ -15,14 +15,10 @@
           "Microsoft.Bcl.Build": "1.0.14"
         },
         "compile": {
-          "lib/net40/System.IO.dll": {},
-          "lib/net40/System.Runtime.dll": {},
-          "lib/net40/System.Threading.Tasks.dll": {}
+          "lib/net45/_._": {}
         },
         "runtime": {
-          "lib/net40/System.IO.dll": {},
-          "lib/net40/System.Runtime.dll": {},
-          "lib/net40/System.Threading.Tasks.dll": {}
+          "lib/net45/_._": {}
         }
       },
       "Microsoft.Bcl.Build/1.0.14": {
@@ -37,17 +33,17 @@
           "Microsoft.Bcl": "1.1.9",
           "Microsoft.Bcl.Build": "1.0.14"
         },
+        "frameworkAssemblies": [
+          "System.Net.Http",
+          "System.Net.Http.WebRequest"
+        ],
         "compile": {
-          "lib/net40/System.Net.Http.Extensions.dll": {},
-          "lib/net40/System.Net.Http.Primitives.dll": {},
-          "lib/net40/System.Net.Http.WebRequest.dll": {},
-          "lib/net40/System.Net.Http.dll": {}
+          "lib/net45/System.Net.Http.Extensions.dll": {},
+          "lib/net45/System.Net.Http.Primitives.dll": {}
         },
         "runtime": {
-          "lib/net40/System.Net.Http.Extensions.dll": {},
-          "lib/net40/System.Net.Http.Primitives.dll": {},
-          "lib/net40/System.Net.Http.WebRequest.dll": {},
-          "lib/net40/System.Net.Http.dll": {}
+          "lib/net45/System.Net.Http.Extensions.dll": {},
+          "lib/net45/System.Net.Http.Primitives.dll": {}
         }
       },
       "Nancy/0.23.1": {
@@ -74,10 +70,10 @@
       "Newtonsoft.Json/7.0.1": {
         "type": "package",
         "compile": {
-          "lib/net40/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/net40/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "System.IO.Abstractions/1.4.0.86": {
@@ -90,7 +86,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.0/win": {
+    ".NETFramework,Version=v4.5.1/win": {
       "LibLog/4.2.2": {
         "type": "package",
         "frameworkAssemblies": [
@@ -103,14 +99,10 @@
           "Microsoft.Bcl.Build": "1.0.14"
         },
         "compile": {
-          "lib/net40/System.IO.dll": {},
-          "lib/net40/System.Runtime.dll": {},
-          "lib/net40/System.Threading.Tasks.dll": {}
+          "lib/net45/_._": {}
         },
         "runtime": {
-          "lib/net40/System.IO.dll": {},
-          "lib/net40/System.Runtime.dll": {},
-          "lib/net40/System.Threading.Tasks.dll": {}
+          "lib/net45/_._": {}
         }
       },
       "Microsoft.Bcl.Build/1.0.14": {
@@ -125,17 +117,17 @@
           "Microsoft.Bcl": "1.1.9",
           "Microsoft.Bcl.Build": "1.0.14"
         },
+        "frameworkAssemblies": [
+          "System.Net.Http",
+          "System.Net.Http.WebRequest"
+        ],
         "compile": {
-          "lib/net40/System.Net.Http.Extensions.dll": {},
-          "lib/net40/System.Net.Http.Primitives.dll": {},
-          "lib/net40/System.Net.Http.WebRequest.dll": {},
-          "lib/net40/System.Net.Http.dll": {}
+          "lib/net45/System.Net.Http.Extensions.dll": {},
+          "lib/net45/System.Net.Http.Primitives.dll": {}
         },
         "runtime": {
-          "lib/net40/System.Net.Http.Extensions.dll": {},
-          "lib/net40/System.Net.Http.Primitives.dll": {},
-          "lib/net40/System.Net.Http.WebRequest.dll": {},
-          "lib/net40/System.Net.Http.dll": {}
+          "lib/net45/System.Net.Http.Extensions.dll": {},
+          "lib/net45/System.Net.Http.Primitives.dll": {}
         }
       },
       "Nancy/0.23.1": {
@@ -162,10 +154,10 @@
       "Newtonsoft.Json/7.0.1": {
         "type": "package",
         "compile": {
-          "lib/net40/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/net40/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "System.IO.Abstractions/1.4.0.86": {
@@ -468,7 +460,7 @@
   },
   "projectFileDependencyGroups": {
     "": [],
-    ".NETFramework,Version=v4.0": [
+    ".NETFramework,Version=v4.5.1": [
       "LibLog >= 4.2.2",
       "Microsoft.Bcl >= 1.1.9",
       "Microsoft.Bcl.Build >= 1.0.14",
