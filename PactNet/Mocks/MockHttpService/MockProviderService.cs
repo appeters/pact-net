@@ -223,24 +223,41 @@ namespace PactNet.Mocks.MockHttpService
 
         private static string BuildTestContext()
         {
+#if NETSTANDARD1_5
+           var stack = new StackTrace(new Exception(), true);
+#else
             var stack = new StackTrace(true);
+#endif
             var stackFrames = stack.GetFrames() ?? new StackFrame[0];
 
             var relevantStackFrameSummaries = new List<string>();
 
             foreach (var stackFrame in stackFrames)
             {
+#if NETSTANDARD1_5
+           var type = stackFrame.GetType();
+#else
                 var type = stackFrame.GetMethod().ReflectedType;
+#endif
 
-                if (type == null || 
-                    (type.Assembly.GetName().Name.StartsWith("PactNet", StringComparison.CurrentCultureIgnoreCase) &&
+                if (type == null ||
+#if NETSTANDARD1_5
+           (type.AssemblyQualifiedName.StartsWith("PactNet", StringComparison.CurrentCultureIgnoreCase) &&
+                    !type.AssemblyQualifiedName.Equals("PactNet.Tests", StringComparison.CurrentCultureIgnoreCase)))
+#else
+                (type.Assembly.GetName().Name.StartsWith("PactNet", StringComparison.CurrentCultureIgnoreCase) &&
                     !type.Assembly.GetName().Name.Equals("PactNet.Tests", StringComparison.CurrentCultureIgnoreCase)))
+#endif
                 {
                     continue;
                 }
 
                 //Don't care about any mscorlib frames down
+#if NETSTANDARD1_5
+           if (type.AssemblyQualifiedName.Equals("mscorlib", StringComparison.CurrentCultureIgnoreCase))
+#else
                 if (type.Assembly.GetName().Name.Equals("mscorlib", StringComparison.CurrentCultureIgnoreCase))
+#endif
                 {
                     break;
                 }
