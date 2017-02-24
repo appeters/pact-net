@@ -111,14 +111,14 @@ namespace PactNet.Mocks.MockHttpService.Models
 
         private bool IsJsonContentType()
         {
-            return ContentType.MediaType.IndexOf("application/", StringComparison.InvariantCultureIgnoreCase) == 0 &&
-                ContentType.MediaType.IndexOf("json", StringComparison.InvariantCultureIgnoreCase) > 0;
+            return ContentType.MediaType.IndexOf("application/", Constants.StringComparisonCulture) == 0 &&
+                ContentType.MediaType.IndexOf("json", Constants.StringComparisonCulture) > 0;
         }
 
         private bool IsBinaryContentType()
         {
-            return ContentType.MediaType.IndexOf("application/", StringComparison.InvariantCultureIgnoreCase) == 0 &&
-                ContentType.MediaType.IndexOf("octet-stream", StringComparison.InvariantCultureIgnoreCase) > 0;
+            return ContentType.MediaType.IndexOf("application/", Constants.StringComparisonCulture) == 0 &&
+                ContentType.MediaType.IndexOf("octet-stream", Constants.StringComparisonCulture) > 0;
         }
     }
 }

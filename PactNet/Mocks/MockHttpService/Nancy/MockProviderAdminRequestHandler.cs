@@ -35,6 +35,7 @@ namespace PactNet.Mocks.MockHttpService.Nancy
 
         public Response Handle(NancyContext context)
         {
+            var stringComparisonCulture = Constants.StringComparisonCulture;
             //The first admin request with test context, we should log the context
             if (String.IsNullOrEmpty(_mockProviderRepository.TestContext) &&
                 context.Request.Headers != null &&
@@ -44,25 +45,25 @@ namespace PactNet.Mocks.MockHttpService.Nancy
                 _log.InfoFormat("Test context {0}", _mockProviderRepository.TestContext);
             }
 
-            if (context.Request.Method.Equals("DELETE", StringComparison.InvariantCultureIgnoreCase) &&
+            if (context.Request.Method.Equals("DELETE", Constants.StringComparisonCulture) &&
                 context.Request.Path == Constants.InteractionsPath)
             {
                 return HandleDeleteInteractionsRequest();
             }
 
-            if (context.Request.Method.Equals("POST", StringComparison.InvariantCultureIgnoreCase) &&
+            if (context.Request.Method.Equals("POST", Constants.StringComparisonCulture) &&
                 context.Request.Path == Constants.InteractionsPath)
             {
                 return HandlePostInteractionsRequest(context);
             }
 
-            if (context.Request.Method.Equals("GET", StringComparison.InvariantCultureIgnoreCase) &&
+            if (context.Request.Method.Equals("GET", Constants.StringComparisonCulture) &&
                 context.Request.Path == Constants.InteractionsVerificationPath)
             {
                 return HandleGetInteractionsVerificationRequest();
             }
 
-            if (context.Request.Method.Equals("POST", StringComparison.InvariantCultureIgnoreCase) &&
+            if (context.Request.Method.Equals("POST", Constants.StringComparisonCulture) &&
                 context.Request.Path == Constants.PactPath)
             {
                 return HandlePostPactRequest(context);

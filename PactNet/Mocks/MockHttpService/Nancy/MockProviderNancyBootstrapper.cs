@@ -23,7 +23,7 @@ namespace PactNet.Mocks.MockHttpService.Nancy
         {
             get { return new List<ModuleRegistration>(); }
         }
-
+        /*
         protected override NancyInternalConfiguration InternalConfiguration
         {
             get
@@ -35,7 +35,7 @@ namespace PactNet.Mocks.MockHttpService.Nancy
                 });
             }
         }
-
+        */
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
             RegisterDependenciesWithNancyContainer(container);

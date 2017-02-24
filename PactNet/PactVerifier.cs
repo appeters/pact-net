@@ -246,8 +246,8 @@ namespace PactNet
 
         private static bool IsWebUri(string uri)
         {
-            return uri.StartsWith("http://", StringComparison.InvariantCultureIgnoreCase) ||
-                   uri.StartsWith("https://", StringComparison.InvariantCultureIgnoreCase);
+            return uri.StartsWith("http://", Constants.StringComparisonCulture) ||
+                   uri.StartsWith("https://", Constants.StringComparisonCulture);
         }
 
         private static void Dispose(IDisposable disposable)
