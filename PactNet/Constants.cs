@@ -18,7 +18,18 @@ namespace PactNet
 #if NETSTANDARD1_5
                 return StringComparison.OrdinalIgnoreCase;
 #else
-                return Constants.StringComparisonCulture;
+                return StringComparison.InvariantCultureIgnoreCase;
+#endif
+            }
+        }
+        public static StringComparer StringComparerCulture
+        {
+            get
+            {
+#if NETSTANDARD1_5
+                return StringComparer.OrdinalIgnoreCase;
+#else
+                return Constants.StringComparerCulture;
 #endif
             }
         }

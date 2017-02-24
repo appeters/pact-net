@@ -290,7 +290,7 @@ namespace PactNet.Mocks.MockHttpService
             IDictionary<string, string> headers = null;
             if (message.Headers != null)
             {
-                headers = new Dictionary<string, string>(message.Headers, StringComparer.InvariantCultureIgnoreCase);
+                headers = new Dictionary<string, string>(message.Headers, Constants.StringComparerCulture);
             }
 
             return headers != null && headers.ContainsKey("Content-Type");
