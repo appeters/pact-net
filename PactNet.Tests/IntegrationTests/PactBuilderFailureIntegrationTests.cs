@@ -8,7 +8,7 @@ using Xunit;
 
 namespace PactNet.Tests.IntegrationTests
 {
-    public class PactBuilderFailureIntegrationTests : IUseFixture<FailureIntegrationTestsMyApiPact>
+    public class PactBuilderFailureIntegrationTests //: IUseFixture<FailureIntegrationTestsMyApiPact>
     {
         private IMockProviderService _mockProviderService;
         private string _mockProviderServiceBaseUri;

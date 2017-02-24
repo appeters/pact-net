@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO.Abstractions;
 using Nancy;
@@ -23,7 +24,21 @@ namespace PactNet.Mocks.MockHttpService.Nancy
         {
             get { return new List<ModuleRegistration>(); }
         }
-        /*
+
+        
+#if NETSTANDARD1_5
+        protected override Func<ITypeCatalog, NancyInternalConfiguration> InternalConfiguration
+        {
+            get
+            {
+                return NancyInternalConfiguration.WithOverrides(c =>
+                {
+                    c.RequestDispatcher = typeof(MockProviderNancyRequestDispatcher);
+                    c.StatusCodeHandlers.Clear();
+                });
+            }
+        }
+#else
         protected override NancyInternalConfiguration InternalConfiguration
         {
             get
@@ -35,7 +50,9 @@ namespace PactNet.Mocks.MockHttpService.Nancy
                 });
             }
         }
-        */
+#endif
+
+
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
             RegisterDependenciesWithNancyContainer(container);

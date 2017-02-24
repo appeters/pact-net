@@ -3,7 +3,7 @@ using Xunit;
 
 namespace PactNet.Tests.IntegrationTests
 {
-    public class PactBuilderIntegrationTests : IUseFixture<IntegrationTestsMyApiPact>
+    public class PactBuilderIntegrationTests //: IUseFixture<IntegrationTestsMyApiPact>
     {
         private IMockProviderService _mockProviderService;
         private string _mockProviderServiceBaseUri;
