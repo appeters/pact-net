@@ -17,7 +17,8 @@ namespace PactNet.Infrastructure.Logging
         {
             LogPath = logFilePath;
             TryCreateDirectory(logFilePath);
-            var file = fileSystem.File.Open(logFilePath, FileMode.Append, FileAccess.Write, FileShare.Read);
+            var file = System.IO.File.Open(logFilePath, FileMode.Append, FileAccess.Write, FileShare.Read);
+            //var file = fileSystem.File.Open(logFilePath, FileMode.Append, FileAccess.Write, FileShare.Read);
             _writer = new StreamWriter(file, Encoding.UTF8);
         }
 
