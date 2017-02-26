@@ -1,9 +1,10 @@
 {
-  "copyright": "Copyright �  2014",
+  "copyright": "Copyright ©  2014",
   "title": "PactNet.Tests",
   "version": "1.0.0-*",
   "frameworks": {
-    "net451": {
+    /*
+     "net451": {
       "dependencies": {
         "Microsoft.Bcl": "1.1.9",
         "Microsoft.Bcl.Build": "1.0.14",
@@ -13,35 +14,47 @@
         "Nancy.Hosting.Self": "0.23.1",
         "NSubstitute": "1.7.2.0",
         "System.IO.Abstractions": "1.4.0.86",
-        "xunit": "1.9.2",
-        "xunit.runner.visualstudio": "2.0.1",
-        "PactNet": "1.0.0-*"
+        "xunit.runner.visualstudio": "2.0.1"
       }
     },
+    */
     "netcoreapp1.0": {
-      "imports": [ "dnxcore50", "net452" ],
+      "imports": [ "dnxcore50", "net452"],
+      "buildOptions": {
+        "define": [
+          "NETSTANDARD1_5"
+        ]
+      },
       "dependencies": {
-        "Microsoft.Bcl": "1.1.9",
-        "Microsoft.Bcl.Build": "1.0.14",
-        "Microsoft.Net.Compilers": "1.3.2",
+        "Microsoft.NETCore.App": {
+          "version": "1.1.0",
+          "“type”": "platform"
+        },
+        "LibLog": "4.2.6",
+        "Microsoft.AspNet.WebApi.Tracing": "4.0.30506",
+        "Microsoft.AspNetCore.Diagnostics": "1.0.0",
         "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
-        "Microsoft.Net.Http": "2.2.28",
         "Nancy": "2.0.0-clinteastwood",
         "Nancy.Hosting.Self": "2.0.0-clinteastwood",
         "NETStandard.Library": "1.6.0",
         "NSubstitute": "1.7.2.0",
         "System.IO.Abstractions": "2.0.0.140",
-        "xunit": "1.9.2",
-        "xunit.runner.visualstudio": "2.0.1"
+        "xunit.runner.dnx": "2.1.0-beta6-build191",
+        "Microsoft.DotNet.InternalAbstractions": "1.0.0"
       }
     }
   },
-     
-      "testRunner": "xunit",
+
+  "testRunner": "xunit",
   "dependencies": {
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
-    "Microsoft.CSharp": "4.3.0",
-    "Newtonsoft.Json": "7.0.1",
-    
+    "Newtonsoft.Json": "9.0.1",
+    "PactNet": "1.0.0-*",
+    "System.Security.Principal": "4.3.0",
+    "System.Security.Principal.Windows": "4.3.0",
+    "xunit": "2.2.0"
+  },
+  "runtimes": {
+    "win10-x64": {}
   }
-    }
+}
