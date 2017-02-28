@@ -1,7 +1,16 @@
-﻿{
+{
   "version": "1.0.0-*",
   "dependencies": {
-    "Newtonsoft.Json": "9.0.1"
+    "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.0",
+    "Microsoft.AspNetCore.Owin": "1.0.0",
+    //"Microsoft.Extensions.Configuration": "1.1.0",
+    // "Microsoft.Extensions.Configuration.Abstractions": "1.1.0",
+    "NETStandard.Library": "1.6.1",
+    "Newtonsoft.Json": "9.0.1",
+    "Microsoft.Extensions.Configuration.Binder": "1.0.0",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Microsoft.AspNetCore.TestHost": "1.1.0",
+    
   },
   "frameworks": {
     "net451": {
@@ -14,10 +23,15 @@
         "Nancy": "0.23.1",
         "Nancy.Hosting.Self": "0.23.1",
         "System.IO.Abstractions": "1.4.0.86"
+        
       }
     },
     "netcoreapp1.0": {
-      "imports": ["net452"],
+      "imports": [
+        "net452",
+        "dotnet54",
+        "portable-net451+win8"
+      ],
       "buildOptions": {
         "define": [
           "LIBLOG_PORTABLE",
@@ -25,18 +39,24 @@
         ]
       },
       "dependencies": {
-        "Microsoft.NETCore.App": {
-          "version": "1.1.0"
-        },
         "LibLog": "4.2.6",
         "Microsoft.AspNet.WebApi.Tracing": "4.0.30506",
         "Microsoft.AspNetCore.Diagnostics": "1.0.0",
         "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
         "Nancy": "2.0.0-clinteastwood",
-        "Nancy.Hosting.Self": "2.0.0-clinteastwood",
-        "NETStandard.Library": "1.6.0",
-        "System.IO.Abstractions": "2.0.0.140"
+        // "Nancy.Hosting.Self": "2.0.0-clinteastwood",
+        "System.IO.Abstractions": "2.0.0.140",
+        //"System.IO.Abstractions": "1.4.0.86",
+        "Microsoft.AspNetCore.Hosting": "1.1.0",
+        "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
+        //"Microsoft.AspNetCore.Owin": "1.0.0",
+        "System.IO.FileSystem": "4.3.0",
+
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.1.0"
+        }
+      }
       }
     }
   }
-}
