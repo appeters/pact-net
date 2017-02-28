@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -12,6 +13,7 @@ using PactNet.Extensions;
 using PactNet.Mocks.MockHttpService.Mappers;
 using PactNet.Mocks.MockHttpService.Models;
 using PactNet.Mocks.MockHttpService;
+
 
 namespace PactNet.Mocks.MockHttpService
 {
@@ -94,7 +96,7 @@ namespace PactNet.Mocks.MockHttpService
             }
 
             _request = request;
-            
+
             return this;
         }
 
@@ -221,43 +223,65 @@ namespace PactNet.Mocks.MockHttpService
             ClearTrasientState();
         }
 
+
+#if NETSTANDARD1_5
         private static string BuildTestContext()
         {
-#if NETSTANDARD1_5
-           var stack = new StackTrace(new Exception(), true);
+            
+            var stack = Environment.StackTrace;
+            var stackList = stack.Split(Environment.NewLine.ToCharArray()).ToList();
+            var relevantStackFrameSummaries = new List<string>();
+            foreach (var stackFrame in stackList)
+            {
+               var stackFrameParsed = stackFrame.Replace(" at ", "").TrimStart();
+                if (
+            (stackFrameParsed.StartsWith("PactNet", StringComparison.CurrentCultureIgnoreCase) &&
+                     !stackFrameParsed.StartsWith("PactNet.Tests", StringComparison.CurrentCultureIgnoreCase)))
+                {
+                    continue;
+                }
+                else if(stackFrameParsed.StartsWith("PactNet.Tests", StringComparison.CurrentCultureIgnoreCase))
+                {
+                var stackFrameInfo = stackFrameParsed.Split('(')[0].Split('.');
+                var count = stackFrameInfo.Length;
+                relevantStackFrameSummaries.Add(String.Format("{0}.{1}", stackFrameInfo[count-2], stackFrameInfo[count-1]));
+                }
+                else if(relevantStackFrameSummaries.Any())
+                {
+                    break;
+                }
+                
+            }
+
+            return String.Join(" ", relevantStackFrameSummaries);
+            
+        }
 #else
+
+        private static string BuildTestContext()
+        {
+
             var stack = new StackTrace(true);
-#endif
             var stackFrames = stack.GetFrames() ?? new StackFrame[0];
 
             var relevantStackFrameSummaries = new List<string>();
 
             foreach (var stackFrame in stackFrames)
             {
-#if NETSTANDARD1_5
-           var type = stackFrame.GetType();
-#else
+
                 var type = stackFrame.GetMethod().ReflectedType;
-#endif
 
                 if (type == null ||
-#if NETSTANDARD1_5
-           (type.AssemblyQualifiedName.StartsWith("PactNet", StringComparison.CurrentCultureIgnoreCase) &&
-                    !type.AssemblyQualifiedName.Equals("PactNet.Tests", StringComparison.CurrentCultureIgnoreCase)))
-#else
                 (type.Assembly.GetName().Name.StartsWith("PactNet", StringComparison.CurrentCultureIgnoreCase) &&
                     !type.Assembly.GetName().Name.Equals("PactNet.Tests", StringComparison.CurrentCultureIgnoreCase)))
-#endif
                 {
                     continue;
                 }
 
                 //Don't care about any mscorlib frames down
-#if NETSTANDARD1_5
-           if (type.AssemblyQualifiedName.Equals("mscorlib", StringComparison.CurrentCultureIgnoreCase))
-#else
+
                 if (type.Assembly.GetName().Name.Equals("mscorlib", StringComparison.CurrentCultureIgnoreCase))
-#endif
+
                 {
                     break;
                 }
@@ -267,7 +291,7 @@ namespace PactNet.Mocks.MockHttpService
 
             return String.Join(" ", relevantStackFrameSummaries);
         }
-
+#endif
         private void SendAdminHttpRequest(HttpVerb method, string path)
         {
             SendAdminHttpRequest<object>(method, path, null);
