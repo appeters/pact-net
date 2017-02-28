@@ -3,9 +3,11 @@ using System.Net.Http;
 using PactNet.Mocks.MockHttpService;
 using PactNet.Mocks.MockHttpService.Mappers;
 using PactNet.Mocks.MockHttpService.Nancy;
+using Xunit;
 
 namespace PactNet.Tests.IntegrationTests
 {
+    [Collection("Integration Tests")]
     public class FailureIntegrationTestsMyApiPact : IDisposable
     {
         public IPactBuilder PactBuilder { get; private set; }

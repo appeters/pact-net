@@ -8,6 +8,7 @@ using Xunit;
 
 namespace PactNet.Tests.IntegrationTests
 {
+    [Collection("Integration Tests")]
     public class PactBuilderFailureIntegrationTests : IClassFixture<FailureIntegrationTestsMyApiPact>
     {
         private IMockProviderService _mockProviderService;
