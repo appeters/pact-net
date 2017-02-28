@@ -19,8 +19,9 @@ namespace PactNet.Mocks.MockHttpService.Kestrel
         private readonly INancyBootstrapper _bootstrapper;
         private readonly ILog _log;
         private readonly PactConfig _config;
+        private IWebHost webHost;
 
-        private TestServer _server;
+       
 
         internal KestrelHttpHost(Uri baseUri, string providerName, PactConfig config, INancyBootstrapper bootstrapper) :
             this(baseUri, providerName, config, false)
@@ -60,8 +61,6 @@ namespace PactNet.Mocks.MockHttpService.Kestrel
         }
 
 
-
-
         public void Start()
         {
 
@@ -72,20 +71,18 @@ namespace PactNet.Mocks.MockHttpService.Kestrel
             host = host.UseStartup<Startup>();
             host = host.Configure(app =>
             {
-                // Write the application inline, this won't call any startup class in the assembly
-
                 app.UseOwin(x => x.UseNancy(opt => opt.Bootstrapper = _bootstrapper));
             });
             host = host.UseUrls(_baseUri.ToString());
+
+            webHost = host.Build();
            
-            
-            var host2 = host.Build();
-           host2.Start();
+           webHost.Start();
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            webHost.Dispose();
         }
 
         private readonly IConfiguration config;
