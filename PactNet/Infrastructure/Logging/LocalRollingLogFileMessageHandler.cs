@@ -1,8 +1,16 @@
 using System;
 using System.IO;
+#if NETSTANDARD1_5
+using Thinktecture.IO;
+using Thinktecture;
+using PactNet.IO;
+#else
 using System.IO.Abstractions;
+#endif
 using System.Linq;
 using System.Text;
+
+
 
 namespace PactNet.Infrastructure.Logging
 {
@@ -17,8 +25,13 @@ namespace PactNet.Infrastructure.Logging
         {
             LogPath = logFilePath;
             TryCreateDirectory(logFilePath);
-            var file = System.IO.File.Open(logFilePath, FileMode.Append, FileAccess.Write, FileShare.Read);
-            //var file = fileSystem.File.Open(logFilePath, FileMode.Append, FileAccess.Write, FileShare.Read);
+
+#if NETSTANDARD1_5
+            var file = fileSystem.File.Open(logFilePath, FileMode.Append, FileAccess.Write, FileShare.Read).ToImplementation();
+#else
+            var file = fileSystem.File.Open(logFilePath, FileMode.Append, FileAccess.Write, FileShare.Read);
+#endif
+
             _writer = new StreamWriter(file, Encoding.UTF8);
         }
 

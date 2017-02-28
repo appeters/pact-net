@@ -1,5 +1,10 @@
 ﻿using System;
+#if NETSTANDARD1_5
+using Thinktecture.IO;
+using PactNet.IO;
+#else
 using System.IO.Abstractions;
+#endif
 using System.Linq;
 using System.Net.Http;
 using Newtonsoft.Json;

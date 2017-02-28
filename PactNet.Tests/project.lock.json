@@ -2128,15 +2128,6 @@
           "lib/net45/_._": {}
         }
       },
-      "System.IO.Abstractions/2.0.0.140": {
-        "type": "package",
-        "compile": {
-          "lib/net40/System.IO.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/net40/System.IO.Abstractions.dll": {}
-        }
-      },
       "System.IO.Compression/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3628,6 +3619,87 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "Thinktecture.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Thinktecture.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Thinktecture.Abstractions.dll": {}
+        }
+      },
+      "Thinktecture.IO.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO": "4.3.0",
+          "Thinktecture.Runtime.Abstractions": "1.3.0",
+          "Thinktecture.Text.Encoding.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Thinktecture.IO.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Thinktecture.IO.Abstractions.dll": {}
+        }
+      },
+      "Thinktecture.IO.FileSystem.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.FileSystem": "4.3.0",
+          "Thinktecture.IO.Abstractions": "1.3.0",
+          "Thinktecture.Runtime.Handles.Abstractions": "1.3.0",
+          "Thinktecture.Text.Encoding.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Thinktecture.IO.FileSystem.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Thinktecture.IO.FileSystem.Abstractions.dll": {}
+        }
+      },
+      "Thinktecture.Runtime.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.3.0",
+          "Thinktecture.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Thinktecture.Runtime.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Thinktecture.Runtime.Abstractions.dll": {}
+        }
+      },
+      "Thinktecture.Runtime.Handles.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.Handles": "4.3.0",
+          "Thinktecture.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Thinktecture.Runtime.Handles.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Thinktecture.Runtime.Handles.Abstractions.dll": {}
+        }
+      },
+      "Thinktecture.Text.Encoding.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encoding": "4.3.0",
+          "Thinktecture.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Thinktecture.Text.Encoding.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Thinktecture.Text.Encoding.Abstractions.dll": {}
+        }
+      },
       "xunit/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -3757,8 +3829,9 @@
           "NETStandard.Library": "1.6.1",
           "Nancy": "2.0.0-clinteastwood",
           "Newtonsoft.Json": "9.0.1",
-          "System.IO.Abstractions": "2.0.0.140",
-          "System.IO.FileSystem": "4.3.0"
+          "System.IO.FileSystem": "4.3.0",
+          "Thinktecture.IO.Abstractions": "1.3.0",
+          "Thinktecture.IO.FileSystem.Abstractions": "1.3.0"
         },
         "compile": {
           "netcoreapp1.0/PactNet.dll": {}
@@ -6096,15 +6169,6 @@
           "lib/net45/_._": {}
         }
       },
-      "System.IO.Abstractions/2.0.0.140": {
-        "type": "package",
-        "compile": {
-          "lib/net40/System.IO.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/net40/System.IO.Abstractions.dll": {}
-        }
-      },
       "System.IO.Compression/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -7484,6 +7548,87 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "Thinktecture.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Thinktecture.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Thinktecture.Abstractions.dll": {}
+        }
+      },
+      "Thinktecture.IO.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO": "4.3.0",
+          "Thinktecture.Runtime.Abstractions": "1.3.0",
+          "Thinktecture.Text.Encoding.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Thinktecture.IO.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Thinktecture.IO.Abstractions.dll": {}
+        }
+      },
+      "Thinktecture.IO.FileSystem.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.FileSystem": "4.3.0",
+          "Thinktecture.IO.Abstractions": "1.3.0",
+          "Thinktecture.Runtime.Handles.Abstractions": "1.3.0",
+          "Thinktecture.Text.Encoding.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Thinktecture.IO.FileSystem.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Thinktecture.IO.FileSystem.Abstractions.dll": {}
+        }
+      },
+      "Thinktecture.Runtime.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.3.0",
+          "Thinktecture.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Thinktecture.Runtime.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Thinktecture.Runtime.Abstractions.dll": {}
+        }
+      },
+      "Thinktecture.Runtime.Handles.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.Handles": "4.3.0",
+          "Thinktecture.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Thinktecture.Runtime.Handles.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Thinktecture.Runtime.Handles.Abstractions.dll": {}
+        }
+      },
+      "Thinktecture.Text.Encoding.Abstractions/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encoding": "4.3.0",
+          "Thinktecture.Abstractions": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Thinktecture.Text.Encoding.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Thinktecture.Text.Encoding.Abstractions.dll": {}
+        }
+      },
       "xunit/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -7613,8 +7758,9 @@
           "NETStandard.Library": "1.6.1",
           "Nancy": "2.0.0-clinteastwood",
           "Newtonsoft.Json": "9.0.1",
-          "System.IO.Abstractions": "2.0.0.140",
-          "System.IO.FileSystem": "4.3.0"
+          "System.IO.FileSystem": "4.3.0",
+          "Thinktecture.IO.Abstractions": "1.3.0",
+          "Thinktecture.IO.FileSystem.Abstractions": "1.3.0"
         },
         "compile": {
           "netcoreapp1.0/PactNet.dll": {}
@@ -11126,16 +11272,6 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.IO.Abstractions/2.0.0.140": {
-      "sha512": "3norQB9l1rGwV2ok4rfIdPymQlE8u93chsIArNS74WA5CKV1JqmoLgs1dy1ACNn2YxVjFHb9mb3POkonpenbcw==",
-      "type": "package",
-      "path": "System.IO.Abstractions/2.0.0.140",
-      "files": [
-        "System.IO.Abstractions.2.0.0.140.nupkg.sha512",
-        "System.IO.Abstractions.nuspec",
-        "lib/net40/System.IO.Abstractions.dll"
-      ]
-    },
     "System.IO.Compression/4.3.0": {
       "sha512": "YHndyoiV90iu4iKG115ibkhrG+S3jBm8Ap9OwoUAzO5oPDAWcr0SFwQFm0HjM8WkEZWo0zvLTyLmbvTkW1bXgg==",
       "type": "package",
@@ -14574,6 +14710,96 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "Thinktecture.Abstractions/1.3.0": {
+      "sha512": "ojz86uDigC/hpz6q77T7I+REj+uJl/L9KKPWL0KrC/zsUK7oWCD3UPf2OjpFjri1GKX3kAfy2MuLs64gcPGsjw==",
+      "type": "package",
+      "path": "Thinktecture.Abstractions/1.3.0",
+      "files": [
+        "Thinktecture.Abstractions.1.3.0.nupkg.sha512",
+        "Thinktecture.Abstractions.nuspec",
+        "lib/net45/Thinktecture.Abstractions.dll",
+        "lib/net45/Thinktecture.Abstractions.xml",
+        "lib/net46/Thinktecture.Abstractions.dll",
+        "lib/net46/Thinktecture.Abstractions.xml",
+        "lib/netstandard1.0/Thinktecture.Abstractions.dll",
+        "lib/netstandard1.0/Thinktecture.Abstractions.xml"
+      ]
+    },
+    "Thinktecture.IO.Abstractions/1.3.0": {
+      "sha512": "gWPwQBUOB3vmlVLJwUw2+hSUQPyY/YnC0C6O+KdvCFcANdMTx/uSZSMXH91CwyWvSJvwkW1KZGjUmWzzkFCWMQ==",
+      "type": "package",
+      "path": "Thinktecture.IO.Abstractions/1.3.0",
+      "files": [
+        "Thinktecture.IO.Abstractions.1.3.0.nupkg.sha512",
+        "Thinktecture.IO.Abstractions.nuspec",
+        "lib/net45/Thinktecture.IO.Abstractions.dll",
+        "lib/net45/Thinktecture.IO.Abstractions.xml",
+        "lib/net46/Thinktecture.IO.Abstractions.dll",
+        "lib/net46/Thinktecture.IO.Abstractions.xml",
+        "lib/netstandard1.0/Thinktecture.IO.Abstractions.dll",
+        "lib/netstandard1.0/Thinktecture.IO.Abstractions.xml"
+      ]
+    },
+    "Thinktecture.IO.FileSystem.Abstractions/1.3.0": {
+      "sha512": "uhHIhAAbF+Db3jM9ykhyqBVLBqaiqipsiKeX6qJD2Qy7H0qWudnRLeKibbBaKwjfaHejK6ls7p1xtp7ycTaVqw==",
+      "type": "package",
+      "path": "Thinktecture.IO.FileSystem.Abstractions/1.3.0",
+      "files": [
+        "Thinktecture.IO.FileSystem.Abstractions.1.3.0.nupkg.sha512",
+        "Thinktecture.IO.FileSystem.Abstractions.nuspec",
+        "lib/net45/Thinktecture.IO.FileSystem.Abstractions.dll",
+        "lib/net45/Thinktecture.IO.FileSystem.Abstractions.xml",
+        "lib/net46/Thinktecture.IO.FileSystem.Abstractions.dll",
+        "lib/net46/Thinktecture.IO.FileSystem.Abstractions.xml",
+        "lib/netstandard1.3/Thinktecture.IO.FileSystem.Abstractions.dll",
+        "lib/netstandard1.3/Thinktecture.IO.FileSystem.Abstractions.xml"
+      ]
+    },
+    "Thinktecture.Runtime.Abstractions/1.3.0": {
+      "sha512": "7Kh8bOpQATUOvJbHcYoJFvUTXH8kvjZzKwMFvAvwIwx44IqWsefOVi18zuYunzoyTi/4pkXtt2lW3iq9t2QiLg==",
+      "type": "package",
+      "path": "Thinktecture.Runtime.Abstractions/1.3.0",
+      "files": [
+        "Thinktecture.Runtime.Abstractions.1.3.0.nupkg.sha512",
+        "Thinktecture.Runtime.Abstractions.nuspec",
+        "lib/net45/Thinktecture.Runtime.Abstractions.dll",
+        "lib/net45/Thinktecture.Runtime.Abstractions.xml",
+        "lib/net46/Thinktecture.Runtime.Abstractions.dll",
+        "lib/net46/Thinktecture.Runtime.Abstractions.xml",
+        "lib/netstandard1.0/Thinktecture.Runtime.Abstractions.dll",
+        "lib/netstandard1.0/Thinktecture.Runtime.Abstractions.xml"
+      ]
+    },
+    "Thinktecture.Runtime.Handles.Abstractions/1.3.0": {
+      "sha512": "1hH1Zmlz3jRZqD1ZuIRT1NBcqYnyTU97lMU9tXJGDjesTMx33R6gWbzFN30m47/Y+WFhwPOsijjL0PB3HFwy0g==",
+      "type": "package",
+      "path": "Thinktecture.Runtime.Handles.Abstractions/1.3.0",
+      "files": [
+        "Thinktecture.Runtime.Handles.Abstractions.1.3.0.nupkg.sha512",
+        "Thinktecture.Runtime.Handles.Abstractions.nuspec",
+        "lib/net45/Thinktecture.Runtime.Handles.Abstractions.dll",
+        "lib/net45/Thinktecture.Runtime.Handles.Abstractions.xml",
+        "lib/net46/Thinktecture.Runtime.Handles.Abstractions.dll",
+        "lib/net46/Thinktecture.Runtime.Handles.Abstractions.xml",
+        "lib/netstandard1.3/Thinktecture.Runtime.Handles.Abstractions.dll",
+        "lib/netstandard1.3/Thinktecture.Runtime.Handles.Abstractions.xml"
+      ]
+    },
+    "Thinktecture.Text.Encoding.Abstractions/1.3.0": {
+      "sha512": "WeXiEbgzpLMK++sdlkye2+ely+euN4eO39L6jOhOOJ9agVa1/tqR7zBIPbJVbFaISe6axksPYFc6QG9evgA75w==",
+      "type": "package",
+      "path": "Thinktecture.Text.Encoding.Abstractions/1.3.0",
+      "files": [
+        "Thinktecture.Text.Encoding.Abstractions.1.3.0.nupkg.sha512",
+        "Thinktecture.Text.Encoding.Abstractions.nuspec",
+        "lib/net45/Thinktecture.Text.Encoding.Abstractions.dll",
+        "lib/net45/Thinktecture.Text.Encoding.Abstractions.xml",
+        "lib/net46/Thinktecture.Text.Encoding.Abstractions.dll",
+        "lib/net46/Thinktecture.Text.Encoding.Abstractions.xml",
+        "lib/netstandard1.0/Thinktecture.Text.Encoding.Abstractions.dll",
+        "lib/netstandard1.0/Thinktecture.Text.Encoding.Abstractions.xml"
+      ]
+    },
     "xunit/2.2.0": {
       "sha512": "DoB9o+x3erv1DGP+pSvrIC1pWg+23LeeG8nOGVldoF+qeWNqQbabc5jLfUWW4zLOsNZfvgHcmJIKuRcZMgoV+w==",
       "type": "package",
@@ -14714,8 +14940,9 @@
       "NSubstitute >= 2.0.1-rc",
       "Nancy >= 2.0.0-clinteastwood",
       "Nancy.Hosting.Self >= 2.0.0-clinteastwood",
-      "System.IO.Abstractions >= 2.0.0.140",
       "System.IO.FileSystem >= 4.3.0",
+      "Thinktecture.IO.Abstractions >= 1.3.0",
+      "Thinktecture.IO.FileSystem.Abstractions >= 1.3.0",
       "xunit.runner.dnx >= 2.1.0-beta6-build191"
     ]
   },

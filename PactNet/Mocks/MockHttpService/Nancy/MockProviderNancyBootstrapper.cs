@@ -1,6 +1,11 @@
 using System;
 using System.Collections.Generic;
+#if NETSTANDARD1_5
+using Thinktecture.IO;
+using PactNet.IO;
+#else
 using System.IO.Abstractions;
+#endif
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Diagnostics;

@@ -23,7 +23,7 @@
         "Nancy": "0.23.1",
         "Nancy.Hosting.Self": "0.23.1",
         "System.IO.Abstractions": "1.4.0.86"
-        
+
       }
     },
     "netcoreapp1.0": {
@@ -45,18 +45,19 @@
         "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
         "Nancy": "2.0.0-clinteastwood",
         // "Nancy.Hosting.Self": "2.0.0-clinteastwood",
-        "System.IO.Abstractions": "2.0.0.140",
+        //"System.IO.Abstractions": "2.0.0.140",
         //"System.IO.Abstractions": "1.4.0.86",
         "Microsoft.AspNetCore.Hosting": "1.1.0",
         "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
         //"Microsoft.AspNetCore.Owin": "1.0.0",
         "System.IO.FileSystem": "4.3.0",
-
+        "Thinktecture.IO.Abstractions": "1.3.0",
+        "Thinktecture.IO.FileSystem.Abstractions": "1.3.0",
         "Microsoft.NETCore.App": {
           "type": "platform",
           "version": "1.1.0"
         }
       }
-      }
     }
+  }
   }
