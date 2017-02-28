@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 using System.Net.Http.Headers;
 using System.Text;
 using Newtonsoft.Json;
@@ -9,6 +10,7 @@ namespace PactNet.Mocks.MockHttpService.Models
     public class HttpBodyContent
     {
         private readonly bool _contentIsBase64Encoded;
+        private Encoding _encoding;
 
         public dynamic Body { get; private set; }
 
@@ -31,8 +33,23 @@ namespace PactNet.Mocks.MockHttpService.Models
 
         public MediaTypeHeaderValue ContentType { get; }
 
-        public Encoding Encoding { get; }
+        
+        public Encoding Encoding
+        {
 
+            get
+            {
+#if NETSTANDARD1_5
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+#endif
+                return _encoding;
+            }
+            set { _encoding = value; }
+        }
+            
+            /*
+        public Encoding Encoding { get; }
+        */
         private HttpBodyContent(MediaTypeHeaderValue contentType)
         {
             if (contentType == null)
