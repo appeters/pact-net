@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NET451
+using System;
 using Nancy.Bootstrapper;
 using Nancy.Hosting.Self;
 using PactNet.Extensions;
@@ -95,3 +96,4 @@ namespace PactNet.Mocks.MockHttpService.Nancy
         }
     }
 }
+#endif

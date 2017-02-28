@@ -11,7 +11,7 @@ using PactNet.Configuration.Json;
 using PactNet.Extensions;
 using PactNet.Mocks.MockHttpService.Mappers;
 using PactNet.Mocks.MockHttpService.Models;
-using PactNet.Mocks.MockHttpService.Nancy;
+using PactNet.Mocks.MockHttpService;
 
 namespace PactNet.Mocks.MockHttpService
 {
@@ -44,7 +44,7 @@ namespace PactNet.Mocks.MockHttpService
 
         public MockProviderService(int port, bool enableSsl, string providerName, PactConfig config, bool bindOnAllAdapters = false)
             : this(
-            baseUri => new NancyHttpHost(baseUri, providerName, config, bindOnAllAdapters),
+            baseUri => new PactHttpHost(baseUri, providerName, config, bindOnAllAdapters),
             port,
             enableSsl,
             baseUri => new HttpClient { BaseAddress = new Uri(baseUri) },
