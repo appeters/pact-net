@@ -8,6 +8,13 @@ namespace PactNet.Tests.Mocks.MockHttpService.Mappers
 {
     public class HttpBodyContentMapperTests
     {
+        public HttpBodyContentMapperTests()
+        {
+#if NETSTANDARD1_5
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+#endif
+        }
+
         private IHttpBodyContentMapper GetSubject()
         {
             return new HttpBodyContentMapper();
