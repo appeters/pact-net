@@ -29,7 +29,7 @@ namespace PactNet
 #if NETSTANDARD1_5
                 return StringComparer.OrdinalIgnoreCase;
 #else
-                return Constants.StringComparerCulture;
+                return StringComparer.InvariantCultureIgnoreCase;
 #endif
             }
         }
