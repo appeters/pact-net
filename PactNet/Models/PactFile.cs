@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Dynamic;
+using Newtonsoft.Json;
 
 namespace PactNet.Models
 {
@@ -9,10 +10,8 @@ namespace PactNet.Models
 
         public PactFile()
         {
-            Metadata = new
-            {
-                pactSpecificationVersion = "1.1.0"
-            };
+            Metadata = new ExpandoObject();
+            Metadata.pactSpecificationVersion = "1.1.0";
         }
     }
 }

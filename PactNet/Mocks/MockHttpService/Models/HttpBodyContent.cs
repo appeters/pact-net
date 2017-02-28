@@ -6,7 +6,7 @@ using PactNet.Configuration.Json;
 
 namespace PactNet.Mocks.MockHttpService.Models
 {
-    internal class HttpBodyContent
+    public class HttpBodyContent
     {
         private readonly bool _contentIsBase64Encoded;
 
