@@ -12,8 +12,8 @@ namespace PactNet.Tests.IntegrationTests
     {
         private IMockProviderService _mockProviderService;
         private string _mockProviderServiceBaseUri;
-
-        public void SetFixture(FailureIntegrationTestsMyApiPact data)
+        
+        public PactBuilderFailureIntegrationTests(FailureIntegrationTestsMyApiPact data)
         {
             _mockProviderService = data.MockProviderService;
             _mockProviderServiceBaseUri = data.MockProviderServiceBaseUri;
