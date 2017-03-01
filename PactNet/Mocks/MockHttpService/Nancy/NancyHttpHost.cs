@@ -1,4 +1,4 @@
-﻿#if NET451
+﻿#if !NETCOREAPP1_0
 using System;
 using Nancy.Bootstrapper;
 using Nancy.Hosting.Self;
