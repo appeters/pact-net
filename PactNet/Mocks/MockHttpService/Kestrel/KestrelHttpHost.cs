@@ -3,7 +3,6 @@ using System;
 using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using Nancy.Bootstrapper;
 using Nancy.Owin;
@@ -15,14 +14,14 @@ namespace PactNet.Mocks.MockHttpService.Kestrel
 {
     public class KestrelHttpHost : IHttpHost
     {
-        private readonly Uri _baseUri;
+        private readonly string _baseUriString;
+        
         private readonly INancyBootstrapper _bootstrapper;
         private readonly ILog _log;
         private readonly PactConfig _config;
-        private IWebHost webHost;
+        private IWebHost _webHost;
 
        
-
         internal KestrelHttpHost(Uri baseUri, string providerName, PactConfig config, INancyBootstrapper bootstrapper) :
             this(baseUri, providerName, config, false)
         {
@@ -34,32 +33,17 @@ namespace PactNet.Mocks.MockHttpService.Kestrel
             var loggerName = LogProvider.CurrentLogProvider.AddLogger(config.LogDir, providerName.ToLowerSnakeCase(), "{0}_mock_service.log");
             config.LoggerName = loggerName;
 
-            _baseUri = baseUri;
+            _baseUriString = baseUri.ToString();
             _bootstrapper = new MockProviderNancyBootstrapper(config);
             _log = LogProvider.GetLogger(config.LoggerName);
             _config = config;
 
-            /*
-            _nancyConfiguration = new HostConfiguration
-            {
-                AllowChunkedEncoding = false
-            };
-            
             if (bindOnAllAdapters)
             {
-                _nancyConfiguration.UrlReservations = new UrlReservations
-                {
-                    CreateAutomatically = true
-                };
-                _nancyConfiguration.RewriteLocalhost = true;
+                var builder = new UriBuilder(baseUri);
+                _baseUriString = _baseUriString.Replace(builder.Host, "*");
             }
-            else
-            {
-                _nancyConfiguration.RewriteLocalhost = false;
-            }
-            */
         }
-
 
         public void Start()
         {
@@ -73,35 +57,16 @@ namespace PactNet.Mocks.MockHttpService.Kestrel
             {
                 app.UseOwin(x => x.UseNancy(opt => opt.Bootstrapper = _bootstrapper));
             });
-            host = host.UseUrls(_baseUri.ToString());
+            host = host.UseUrls(_baseUriString);
 
-            webHost = host.Build();
+            _webHost = host.Build();
            
-           webHost.Start();
+           _webHost.Start();
         }
 
         public void Stop()
         {
-            webHost.Dispose();
-        }
-
-        private readonly IConfiguration config;
-
-        public KestrelHttpHost(IHostingEnvironment env)
-        {
-            var builder = new ConfigurationBuilder()
-                            .AddJsonFile("appsettings.json")
-                              .SetBasePath(env.ContentRootPath);
-
-            config = builder.Build();
-        }
-
-        public void Configure(IApplicationBuilder app)
-        {
-            var appConfig = new AppConfiguration();
-            ConfigurationBinder.Bind(config, appConfig);
-
-            app.UseOwin(x => x.UseNancy(opt => opt.Bootstrapper = new DemoBootstrapper(appConfig)));
+            _webHost.Dispose();
         }
     }
 }
