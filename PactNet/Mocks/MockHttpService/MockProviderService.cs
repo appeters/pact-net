@@ -224,7 +224,7 @@ namespace PactNet.Mocks.MockHttpService
         }
 
 
-#if NETSTANDARD1_5
+#if NETCOREAPP1_0
         private static string BuildTestContext()
         {
             

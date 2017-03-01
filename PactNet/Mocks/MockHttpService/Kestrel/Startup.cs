@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿#if NETCOREAPP1_0
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,3 +32,4 @@ namespace PactNet.Mocks.MockHttpService.Kestrel
         }
     }
 }
+#endif

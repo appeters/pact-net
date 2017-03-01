@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-#if NETSTANDARD1_5
+#if NETCOREAPP1_0
 using Thinktecture.IO;
 using Thinktecture;
 using PactNet.IO;
@@ -26,7 +26,7 @@ namespace PactNet.Infrastructure.Logging
             LogPath = logFilePath;
             TryCreateDirectory(logFilePath);
 
-#if NETSTANDARD1_5
+#if NETCOREAPP1_0
             var file = fileSystem.File.Open(logFilePath, FileMode.Append, FileAccess.Write, FileShare.Read).ToImplementation();
 #else
             var file = fileSystem.File.Open(logFilePath, FileMode.Append, FileAccess.Write, FileShare.Read);

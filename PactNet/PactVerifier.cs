@@ -1,5 +1,5 @@
 ﻿using System;
-#if NETSTANDARD1_5
+#if NETCOREAPP1_0
 using Thinktecture.IO;
 using PactNet.IO;
 #else

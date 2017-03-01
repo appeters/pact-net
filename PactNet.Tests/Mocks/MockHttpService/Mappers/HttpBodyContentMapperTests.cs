@@ -10,7 +10,7 @@ namespace PactNet.Tests.Mocks.MockHttpService.Mappers
     {
         public HttpBodyContentMapperTests()
         {
-#if NETSTANDARD1_5
+#if NETCOREAPP1_0
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 #endif
         }

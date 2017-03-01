@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-#if NETSTANDARD1_5
+#if NETCOREAPP1_0
 using Thinktecture.IO;
 using PactNet.IO;
 #else
@@ -31,7 +31,7 @@ namespace PactNet.Mocks.MockHttpService.Nancy
         }
 
         
-#if NETSTANDARD1_5
+#if NETCOREAPP1_0
         protected override Func<ITypeCatalog, NancyInternalConfiguration> InternalConfiguration
         {
             get

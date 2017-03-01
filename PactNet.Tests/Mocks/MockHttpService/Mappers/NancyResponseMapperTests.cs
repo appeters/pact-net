@@ -85,7 +85,7 @@ namespace PactNet.Tests.Mocks.MockHttpService.Mappers
             Assert.Equal(0, stream.Length);
             Assert.Equal("Content-Length", result.Headers.Last().Key);
             Assert.Equal("100", result.Headers.Last().Value);
-#if !NETSTANDARD1_5
+#if !NETCOREAPP1_0
             stream.Close();
 #endif
             stream.Dispose();

@@ -39,7 +39,7 @@ namespace PactNet.Mocks.MockHttpService.Models
 
             get
             {
-#if NETSTANDARD1_5
+#if NETCOREAPP1_0
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 #endif
                 return _encoding;

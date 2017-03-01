@@ -15,7 +15,7 @@ namespace PactNet
         public static StringComparison StringComparisonCulture {
             get
             {
-#if NETSTANDARD1_5
+#if NETCOREAPP1_0
                 return StringComparison.OrdinalIgnoreCase;
 #else
                 return StringComparison.InvariantCultureIgnoreCase;
@@ -26,7 +26,7 @@ namespace PactNet
         {
             get
             {
-#if NETSTANDARD1_5
+#if NETCOREAPP1_0
                 return StringComparer.OrdinalIgnoreCase;
 #else
                 return StringComparer.InvariantCultureIgnoreCase;
