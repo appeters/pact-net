@@ -46,3 +46,6 @@ Build/PactNet*.nupkg
 /Build/coverage
 [Ll]ogs
 *.DotSettings
+PactNet/project.lock.json
+PactNet.Tests/project.lock.json
+.vs/restore.dg
