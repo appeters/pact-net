@@ -15,13 +15,11 @@ namespace PactNet.Mocks.MockHttpService.Kestrel
     public class KestrelHttpHost : IHttpHost
     {
         private readonly string _baseUriString;
-        
         private readonly INancyBootstrapper _bootstrapper;
         private readonly ILog _log;
         private readonly PactConfig _config;
         private IWebHost _webHost;
 
-       
         internal KestrelHttpHost(Uri baseUri, string providerName, PactConfig config, INancyBootstrapper bootstrapper) :
             this(baseUri, providerName, config, false)
         {
@@ -47,12 +45,9 @@ namespace PactNet.Mocks.MockHttpService.Kestrel
 
         public void Start()
         {
-
             IWebHostBuilder host = new WebHostBuilder();
             host = host.UseContentRoot(Directory.GetCurrentDirectory());
             host = host.UseKestrel();
-            
-            host = host.UseStartup<Startup>();
             host = host.Configure(app =>
             {
                 app.UseOwin(x => x.UseNancy(opt => opt.Bootstrapper = _bootstrapper));
@@ -60,8 +55,7 @@ namespace PactNet.Mocks.MockHttpService.Kestrel
             host = host.UseUrls(_baseUriString);
 
             _webHost = host.Build();
-           
-           _webHost.Start();
+            _webHost.Start();
         }
 
         public void Stop()
