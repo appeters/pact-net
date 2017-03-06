@@ -1,5 +1,5 @@
 {
-  "copyright": "Copyright ©  2014",
+  "copyright": "Copyright Â©  2014",
   "description": "A .NET version of Pact, which enables consumer driven contract testing.",
   "title": "PactNet",
   "version": "1.0.0-*",
@@ -47,4 +47,4 @@
       }
     }
   }
-  }
+}

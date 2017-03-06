@@ -18,8 +18,7 @@
       },
       "dependencies": {
         "Microsoft.NETCore.App": {
-          "version": "1.1.0",
-          "“type”": "platform"
+          "version": "1.1.0"
         },
         "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
         "Nancy": "2.0.0-clinteastwood",
@@ -47,14 +46,15 @@
   },
 
   "testRunner": "xunit",
-  
+
   "buildOptions": {
     "copyToOutput": {
       "include": [ "./IntegrationTests/Specification/pact-specification/testcases/request/*/*" ]
     }
   },
-
+  
   "runtimes": {
     "win10-x64": {}
   }
+  
 }
